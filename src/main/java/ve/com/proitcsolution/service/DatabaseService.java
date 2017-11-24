@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 public class DatabaseService {
 
   private DataSource dataSource;
+  @SuppressWarnings("unused")
   private AuditService auditService;
 
   @Autowired
