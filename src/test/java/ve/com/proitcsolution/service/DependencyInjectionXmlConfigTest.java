@@ -1,16 +1,13 @@
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+package ve.com.proitcsolution.service;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import ve.com.proitcsolution.service.DataSource;
-import ve.com.proitcsolution.service.DatabaseServiceWithoutAnnotations;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:application-context.xml"})
+@SpringJUnitConfig(locations = {"classpath:application-context.xml"})
 public class DependencyInjectionXmlConfigTest implements ApplicationContextAware {
 
   DatabaseServiceWithoutAnnotations databaseService;
@@ -24,12 +21,12 @@ public class DependencyInjectionXmlConfigTest implements ApplicationContextAware
 
   @Test
   public void shouldDatabaseServiceNotNull() {
-    Assert.assertNotNull(databaseService);
+    assertNotNull(databaseService);
   }
 
   @Test
   public void shouldDataSourceNotNull() {
-    Assert.assertNotNull(dataSource);
+    assertNotNull(dataSource);
   }
 
 }

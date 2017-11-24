@@ -1,16 +1,17 @@
+package ve.com.proitcsolution.service;
+
 import javax.inject.Inject;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import org.junit.jupiter.api.Test;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+
 import ve.com.proitcsolution.config.JavaConfig;
 import ve.com.proitcsolution.service.AuditService;
 import ve.com.proitcsolution.service.DataSource;
 import ve.com.proitcsolution.service.DatabaseService;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = JavaConfig.class)
+@SpringJUnitConfig(JavaConfig.class)
 public class DependencyInjectionJavaConfigTest {
 
   @Inject
@@ -22,17 +23,17 @@ public class DependencyInjectionJavaConfigTest {
 
   @Test
   public void shouldBeDatabaseServiceNotNull() {
-    Assert.assertNotNull(databaseService);
+    assertNotNull(databaseService);
   }
 
   @Test
   public void shouldBeDataSourceNotNull() {
-    Assert.assertNotNull(dataSource);
+    assertNotNull(dataSource);
   }
 
   @Test
   public void shouldBeAuditServiceNotNull() {
-    Assert.assertNotNull(auditService);
+    assertNotNull(auditService);
   }
 
 }
