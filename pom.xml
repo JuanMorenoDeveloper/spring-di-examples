@@ -16,6 +16,8 @@
 		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
 		<jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
+		<jakarta-xml-bind.version>2.3.3</jakarta-xml-bind.version>
+		<glassfish-jaxb.version>2.3.3</glassfish-jaxb.version>
 	</properties>
 	<dependencies>
 		<!--Spring Core -->
@@ -86,6 +88,18 @@
 				<configuration>
 					<repoToken>${repoToken}</repoToken>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>jakarta.xml.bind</groupId>
+						<artifactId>jakarta.xml.bind-api</artifactId>
+						<version>${jakarta-xml-bind.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.glassfish.jaxb</groupId>
+						<artifactId>jaxb-runtime</artifactId>
+						<version>${glassfish-jaxb.version}</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>
