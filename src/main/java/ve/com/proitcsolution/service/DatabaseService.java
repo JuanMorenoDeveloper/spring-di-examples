@@ -10,7 +10,6 @@ public class DatabaseService {
   @SuppressWarnings("unused")
   private AuditService auditService;
 
-  @Autowired
   public DatabaseService(DataSource dataSource) {
     this.dataSource = dataSource;
   }
