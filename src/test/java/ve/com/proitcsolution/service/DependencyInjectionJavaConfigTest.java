@@ -2,14 +2,13 @@ package ve.com.proitcsolution.service;
 
 import javax.inject.Inject;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import ve.com.proitcsolution.config.JavaConfig;
-import ve.com.proitcsolution.service.AuditService;
-import ve.com.proitcsolution.service.DataSource;
-import ve.com.proitcsolution.service.DatabaseService;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringJUnitConfig(JavaConfig.class)
 public class DependencyInjectionJavaConfigTest {
@@ -23,17 +22,17 @@ public class DependencyInjectionJavaConfigTest {
 
   @Test
   public void shouldBeDatabaseServiceNotNull() {
-    assertNotNull(databaseService);
+    assertThat(databaseService).isNotNull().hasNoNullFieldsOrProperties();
   }
 
   @Test
   public void shouldBeDataSourceNotNull() {
-    assertNotNull(dataSource);
+    assertThat(dataSource).isNotNull();
   }
 
   @Test
   public void shouldBeAuditServiceNotNull() {
-    assertNotNull(auditService);
+    assertThat(auditService).isNotNull();
   }
 
 }
